@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class twoDArray {
+public class TwoDArray {
    //  Print the spiral order matrix as output for a given matrix of numbers. 
   // public static void main(String arge[]){
    
