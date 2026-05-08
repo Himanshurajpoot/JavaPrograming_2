@@ -75,6 +75,8 @@ public  class Array {
             System.out.println("is assending");
         }else{
             System.out.println("is not assending");
+
+            // dfghjk
         }
        
     }
