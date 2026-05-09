@@ -57,6 +57,7 @@ public class TwoDArray {
 
 
     //Q-2 For a given matrix of N x M, print its transpose.
+    //Q-2 For a given matrix of N x M, print its transpose.
 
     public static void main(String arge[]){
       Scanner sc = new Scanner(System.in);
