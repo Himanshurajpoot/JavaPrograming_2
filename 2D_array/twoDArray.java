@@ -77,8 +77,7 @@ public class TwoDArray {
         }
       }
 
-      int row = 0;
-      int col = 0;
+    
       for(int j =0;j<m;j++){
         for(int i=0;i<n;i++){
 
