@@ -8,6 +8,7 @@ public class MergeSort{
         int ind2 = mid+1;
         int x =0;
 
+        // 
         while (ind1<=mid&&ind2<=ei) {
             if(arr[ind1]<=arr[ind2]){
                 marged[x++]=arr[ind1++];
