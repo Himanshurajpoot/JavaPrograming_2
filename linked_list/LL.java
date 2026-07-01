@@ -1,4 +1,5 @@
 
+import java.sql.Time;
 import java.util.*;
 
 class LL {
@@ -247,6 +248,188 @@ class LL {
 
     }
 
+    public void reverse(){
+        if(head==null||head.next==null){
+            return;
+        }
+
+        Node prevNode = head;
+        Node currNode = head.next;
+        while (currNode!=null) {
+            Node nextNode = currNode.next;
+            currNode.next=prevNode;
+            prevNode = currNode;
+            currNode=nextNode;
+        }
+        head.next=null;
+        head=prevNode;
+
+    }
+
+    public Node reverseListReverse(Node head){
+        if(head==null || head.next==null){
+          return head;
+        };
+        
+        Node newHead = reverseListReverse(head.next);
+
+        head.next.next = head;
+        head.next=null;
+        return newHead;
+     
+    }
+
+
+    // BEST Linked List Questions
+
+
+
+    //Find the nth node from the end & remove it.
+    //Time complexity - O(n)
+    //Space complexity - O(1)
+
+
+    //   public ListNode removeNthFromEnd(ListNode head, int n) {
+    //      if(head==null){
+    //         return head;
+    //     }
+
+    //     ListNode temp = head;
+    //     int length = 0;
+    //     while (temp!=null) {
+    //         temp= temp.next;
+    //         length++;
+    //     }
+
+    //     if(length==n){
+    //         return head.next;
+    //     }
+
+    //     ListNode preNode = head;
+    //     int nthEl = length-n;
+    //     int i = 1;
+    //     while (i!=nthEl) {
+    //         preNode=preNode.next;
+    //         i++;
+    //     };
+    //     preNode.next=preNode.next.next;
+    //     return head;
+    // }
+
+
+
+
+    //   Check if a Linked List is a palindrome
+    //   Time complexity - O(n)
+    //   Space complexity - O(1)  
+
+    // public ListNode getMiddle(ListNode head){
+    //      ListNode slow = head;
+    //      ListNode fast =head;
+    //      while (fast.next!=null&&fast.next.next!=null) {
+    //         slow=slow.next;
+    //         fast=fast.next.next;
+    //      }
+
+    //      return slow;
+    // }
+
+    // public ListNode reverseSeHalf(ListNode head){
+    //     ListNode pre = null;
+    //     ListNode curr = head;
+    //     while (curr!=null) {
+    //         ListNode next = curr.next;
+    //         curr.next=pre;
+    //         pre=curr;
+    //         curr=next;
+    //     }
+
+    //     return pre ;
+    // }
+
+
+    // public boolean isPelindrom(ListNode head ){
+    //     if(head==null||head.next==null){
+    //         return true;
+    //     }
+
+    //     ListNode firstHalf = getMiddle(head);
+    //     ListNode secondHalf = reverseSeHalf(firstHalf.next);
+    //     ListNode firstHalfStart = head;
+
+    //     while (secondHalf!=null) {
+    //         if(firstHalfStart.val!=secondHalf.val){
+    //             return false;
+    //         }
+    //         firstHalfStart=firstHalfStart.next;
+    //         secondHalf=secondHalf.next;
+    //     }
+
+    //     return true;
+    // }
+
+
+    // Detecting Loop in a Linked List.
+    // Time complexity - O(n)
+    // Space complexity - O(1)  
+
+
+
+    // public boolean hasCycle(ListNode head) {
+    //     if(head==null||head.next==null){
+    //         return false;
+    //     }
+
+    //     ListNode slow = head;
+    //     ListNode fast = head;
+    //     while(fast!=null&&fast.next!=null){
+    //          slow=slow.next;
+    //          fast=fast.next.next;
+    //          if(slow==fast){
+    //             return true;
+    //          }
+    //     }
+    //     return false;
+    // }
+
+    // Removing Loops in a Linked List. 
+    
+    // public void removingLoop(ListNode head){
+    //     if(head==null||head.next){
+    //         return;
+    //     }
+
+    //     ListNode slow = head;
+    //     ListNode fast = head;
+    //     boolean  hasLoop = false;
+
+    //     while (fast!=null&&fast.next!=null) {
+    //         slow = slow.next;
+    //         fast = fast.next.next;
+    //         if(slow==fast){
+    //             hasLoop = true;
+    //             break;
+    //         }
+    //     }
+
+    //     if(!hasLoop){
+    //         return ;
+    //     }
+
+    //     slow = head;
+
+    //     while (slow!=fast) {
+    //         slow=slow.next;
+    //         fast=fast.next;
+    //     }
+
+    //     while (fast.next!=slow) {
+    //         fast = fast.next;
+    //     }
+
+    //     fast.next =null;
+    // }
+    
     public static void main(String arge[]) {
         LL list = new LL();
         Scanner scanner = new Scanner(System.in);
@@ -259,7 +442,11 @@ class LL {
         list.print();
         list.remove();
         list.print();
-        System.out.println(list.search(7));
+        list.reverse();
+        list.print();
+        list.head = list.reverseListReverse(list.head);
+        list.print();
+        // System.out.println(list.search(7));
     }
 
 }
