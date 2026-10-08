@@ -131,6 +131,8 @@ public class Hashing {
 
 
 
+
+    
     // public static void main(String arges[]) {
     //     HashMap<String, Integer> map = new HashMap<>();
     //     map.put("kanpur", 202);
